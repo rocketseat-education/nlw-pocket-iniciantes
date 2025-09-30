@@ -1,0 +1,153 @@
+:root {
+  --white: #ffffff;
+
+  --accent-600: #4863f7;
+  --accent-500: #787bd7;
+
+  --alert-600: #ff5c5c;
+
+  --gray-900: #0d0d0d;
+  --gray-800: #111111;
+  --gray-700: #1a1a1a;
+  --gray-200: #424242;
+  --gray-100: #737373;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray-100);
+}
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--gray-900);
+  color: var(--white);
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 62px 124px;
+  gap: 32px;
+
+  overflow-y: scroll;
+}
+
+.main-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn {
+  gap: 10px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 0.5px solid var(--gray-200);
+  color: var(--white);
+  padding: 0 16px;
+
+  transition: background-color 0.5s;
+}
+
+.btn-outline:hover {
+  background-color: var(--gray-200);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-primary {
+  background: var(--accent-600);
+  border: 1px solid var(--accent-500);
+  color: var(--white);
+  padding: 0 24px;
+  transition: opacity 0.5s;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.w-150 {
+  width: 150px;
+  justify-content: center;
+}
+
+.prompt-title {
+  font-weight: 600;
+  font-size: 32px;
+  outline: none;
+}
+
+.prompt-content {
+  font-size: 16px;
+  color: var(--white);
+  outline: none;
+  line-height: 32px;
+}
+
+.editable-wrapper {
+  position: relative;
+}
+
+.editable-wrapper::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: var(--gray-200);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.editable-wrapper.is-empty::before {
+  opacity: 1;
+}
+
+#title-wrapper.is-empty {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--gray-200);
+}
+
+#content-wrapper.is-empty {
+  font-size: 16px;
+  color: var(--gray-200);
+}

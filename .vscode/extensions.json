@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "rocketseat.theme-omni",
+    "naumovs.color-highlight",
+    "ritwickdey.LiveServer",
+    "esbenp.prettier-vscode",
+    "miguelsolorio.symbols",
+    "formulahendry.auto-rename-tag"
+  ]
+}

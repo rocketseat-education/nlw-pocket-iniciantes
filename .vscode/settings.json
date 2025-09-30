@@ -1,0 +1,26 @@
+{
+  // PRETTIER
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.enable": true,
+  "prettier.singleQuote": false,
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+
+  // EDITOR
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.6,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.glyphMargin": false,
+
+  // ZEN MODE
+  "zenMode.fullScreen": false,
+  "zenMode.centerLayout": false,
+  "zenMode.showTabs": "single",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.inlineSuggest.suppressSuggestions": true
+}
