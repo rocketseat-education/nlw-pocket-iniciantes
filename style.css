@@ -5,11 +5,13 @@
   --accent-500: #7878d7;
 
   --alert-600: #ff5c5c;
+  --alert-800: rgba(255, 92, 92, 0.08);
 
   --gray-900: #0d0d0d;
   --gray-800: #111111;
   --gray-700: #1a1a1a;
   --gray-200: #424242;
+
   --gray-100: #737373;
 }
 
@@ -98,6 +100,7 @@ body {
 .btn-primary {
   background: var(--accent-600);
   border: 1px solid var(--accent-500);
+  min-width: 0;
   color: var(--white);
   padding: 0 24px;
   transition: opacity 0.5s;
@@ -161,13 +164,17 @@ body {
 }
 
 .open-toggle {
-  position: absolute;
-  top: 62px;
-  left: 62px;
-  display: none;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 0;
+  background: var(--gray-800);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .sidebar {
+  z-index: 1000;
   width: 400px;
   height: 100vh;
   display: flex;
@@ -176,6 +183,15 @@ body {
   padding: 32px;
   background-color: var(--gray-800);
   border-right: 0.5px solid var(--gray-700);
+  min-width: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateX(0);
 }
 
 .sidebar-header {
@@ -204,6 +220,7 @@ body {
   left: 16px;
   top: 22px;
   transform: translateY(-50%);
+  z-index: 10;
 }
 
 .search-input {
@@ -229,4 +246,90 @@ body {
 
 .logo {
   height: 24px;
+}
+
+.prompt-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.prompt-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.prompt-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prompt-item-description {
+  font-size: 12px;
+  color: var(--gray-100);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+  height: 32px;
+  width: 32px;
+}
+
+.btn-icon:hover {
+  background: var(--alert-800);
+}
+
+.icon-trash {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 950px) {
+  .open-toggle {
+    display: block;
+    top: 38px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 360px;
+    transform: translateX(-100%);
+    z-index: 1100;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main {
+    padding: 24px 32px;
+    margin-left: 0;
+    overflow-y: auto;
+  }
 }
