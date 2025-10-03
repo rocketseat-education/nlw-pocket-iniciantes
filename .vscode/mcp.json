@@ -5,7 +5,7 @@
       "args": [
         "-y",
         "figma-developer-mcp",
-        "--figma-api-key=figd_e3NK48fjCOGPle1-wyegnaJTpjIrExTMWjm0WYEd",
+        "--figma-api-key=SUA_CHAVE_DO_FIGMA_AQUI",
         "--stdio"
       ]
     }
